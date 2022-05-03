@@ -6,15 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name ="userdata")
 @Table(name = "UserData")
 public class UserData {
 	
 		private int id;
-		private String name;
-		private String phoneNo;
-		private String AdharNo;
+		private String firstName;
+		private String mobileNumber;
+		private int password;
 		private String email;
+		private String adharNumber;
 		
 		
 		@Id
@@ -25,23 +26,24 @@ public class UserData {
 		public void setId(int id) {
 			this.id = id;
 		}
-		public String getName() {
-			return name;
+
+		public String getFirstName() {
+			return firstName;
 		}
-		public void setName(String name) {
-			this.name = name;
+		public void setFirstName(String firstName) {
+			this.firstName = firstName;
 		}
-		public String getPhoneNo() {
-			return phoneNo;
+		public String getMobileNumber() {
+			return mobileNumber;
 		}
-		public void setPhoneNo(String phoneNo) {
-			this.phoneNo = phoneNo;
+		public void setMobileNumber(String mobileNumber) {
+			this.mobileNumber = mobileNumber;
 		}
-		public String getAdharNo() {
-			return AdharNo;
+		public int getPassword() {
+			return password;
 		}
-		public void setAdharNo(String adharNo) {
-			AdharNo = adharNo;
+		public void setPassword(int password) {
+			this.password = password;
 		}
 		public String getEmail() {
 			return email;
@@ -49,13 +51,22 @@ public class UserData {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		public UserData(int id, String name, String phoneNo, String adharNo, String email) {
+		public String getAdharNumber() {
+			return adharNumber;
+		}
+		public void setAdharNumber(String adharNumber) {
+			this.adharNumber = adharNumber;
+		}
+		
+		
+		public UserData(int id, String firstName, String mobileNumber, int password, String email, String adharNumber) {
 			super();
 			this.id = id;
-			this.name = name;
-			this.phoneNo = phoneNo;
-			AdharNo = adharNo;
+			this.firstName = firstName;
+			this.mobileNumber = mobileNumber;
+			this.password = password;
 			this.email = email;
+			this.adharNumber = adharNumber;
 		}
 		public UserData() {
 			super();
